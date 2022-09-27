@@ -22,7 +22,7 @@
 					<tbody>
 						<tr ng-repeat="item in items">
 							<td>{{item.name}}</td>
-							<td>{{item.alternate_url}}</td>
+							<td><a href="{{item.alternate_url}}">{{item.alternate_url}}</a></td>
 							<td>{{item.snippet.requirement}}</td>
 							<td>{{item.snippet.responsibility}}</td>
 							<td>{{item.created_at | date : 'dd-MM-yyyy HH:mm'}}</td>
