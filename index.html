@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="parser">
+	<head>
+		<meta charset="utf-8" />
+
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	</head>
+	<body ng-controller="BodyController">
+		<div class="container">
+			<ng-include src="'assets/html/header.html'"></ng-include>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Название</th>
+							<th scope="col">Ссылка</th>
+							<th scope="col col-lg-2">Требования</th>
+							<th scope="col">Задачи</th>
+							<th scope="col">Дата</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in items">
+							<td>{{item.name}}</td>
+							<td>{{item.alternate_url}}</td>
+							<td>{{item.snippet.requirement}}</td>
+							<td>{{item.snippet.responsibility}}</td>
+							<td>{{item.created_at | date : 'dd-MM-yyyy HH:mm'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<ng-include src="'assets/html/footer.html'"></ng-include>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+		<script src="assets/script.js"></script>
+	</body>
+</html>

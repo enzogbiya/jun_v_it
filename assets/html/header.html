@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+	<a class="navbar-brand">Вакансии</a>
+	<form class="form-inline d-f-30">
+		<input
+			ng-model="searchText"
+			class="form-control mr-sm-2"
+			type="search"
+			placeholder="Название"
+			aria-label="Search"
+		/>
+		<button ng-click="searchVacancies(searchText)" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+			Поиск
+		</button>
+	</form>
+</nav>
