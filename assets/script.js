@@ -31,8 +31,10 @@ parserModule.controller("BodyController", function ($scope, $http) {
 	};
 
 	$scope.isAlreadySeen = function (id) {
-		if (localStorage.getItem(id).localeCompare("seen") == 0) {
-			return true;
+		if (localStorage.getItem(id)) {
+			if (localStorage.getItem(id).localeCompare("seen") == 0) {
+				return true;
+			}
 		}
 	};
 });
