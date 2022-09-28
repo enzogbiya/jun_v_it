@@ -13,17 +13,17 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Название</th>
-								<th scope="col">Ссылка</th>
-								<th scope="col col-lg-2">Требования</th>
-								<th scope="col">Задачи</th>
-								<th scope="col">Дата</th>
+								<th class="col">Название</th>
+								<th class="col">Ссылка</th>
+								<th class="col">Требования</th>
+								<th class="col">Задачи</th>
+								<th class="col">Дата</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="item in items">
+							<tr ng-repeat="item in items" ng-style="{'background' : isAlreadySeen(item.id) ? '#e9ffef' : 'none'}">
 								<td>{{item.name}}</td>
-								<td><a href="{{item.alternate_url}}">{{item.alternate_url}}</a></td>
+								<td><a ng-click="setAlreadySeen(item.id)" href="{{item.alternate_url}}">{{item.alternate_url}}</a></td>
 								<td>{{item.snippet.requirement}}</td>
 								<td>{{item.snippet.responsibility}}</td>
 								<td>{{item.created_at | date : 'dd-MM-yyyy HH:mm'}}</td>

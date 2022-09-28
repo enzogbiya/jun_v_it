@@ -25,4 +25,14 @@ parserModule.controller("BodyController", function ($scope, $http) {
 			function (error) {}
 		);
 	};
+
+	$scope.setAlreadySeen = function (id) {
+		localStorage.setItem(id, "seen");
+	};
+
+	$scope.isAlreadySeen = function (id) {
+		if (localStorage.getItem(id).localeCompare("seen") == 0) {
+			return true;
+		}
+	};
 });
