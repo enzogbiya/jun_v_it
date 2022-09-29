@@ -8,41 +8,39 @@
 	<body ng-controller="BodyController">
 		<ng-include src="'assets/html/header.html'"></ng-include>
 		<section class="main">
-			<div class="container">
-				<div class="table-responsive mt-3">
-					<table class="table">
-						<thead>
-							<tr>
-								<th class="col">Название</th>
-								<th class="col">Ссылка</th>
-								<th class="col">Требования</th>
-								<th class="col">Задачи</th>
-								<th class="col">Дата</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="item in items" ng-style="{'background' : isAlreadySeen(item.id) ? '#e9ffef' : 'none'}">
-								<td>{{item.name}}</td>
-								<td><a ng-click="setAlreadySeen(item.id)" href="{{item.alternate_url}}">{{item.alternate_url}}</a></td>
-								<td>{{item.snippet.requirement}}</td>
-								<td>{{item.snippet.responsibility}}</td>
-								<td>{{item.created_at | date : 'dd-MM-yyyy HH:mm'}}</td>
-								<td>
-									<button
-										type="button"
-										class="btn btn-primary"
-										data-toggle="modal"
-										data-target="#exampleModalLong"
-										ng-click="sendDataToModal(item)"
-									>
-										Создать пост
-									</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+			<div class="table-responsive mt-3 p-3">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="col">Название</th>
+							<th class="col">Ссылка</th>
+							<th class="col-6">Требования</th>
+							<th class="col-6">Задачи</th>
+							<th class="col-6">Дата</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in items" ng-style="{'background' : isAlreadySeen(item.id) ? '#e9ffef' : 'none'}">
+							<td>{{item.name}}</td>
+							<td><a ng-click="setAlreadySeen(item.id)" href="{{item.alternate_url}}">{{item.alternate_url}}</a></td>
+							<td>{{item.snippet.requirement}}</td>
+							<td>{{item.snippet.responsibility}}</td>
+							<td>{{item.created_at | date : 'dd-MM-yyyy HH:mm'}}</td>
+							<td>
+								<button
+									type="button"
+									class="btn btn-primary"
+									data-toggle="modal"
+									data-target="#exampleModalLong"
+									ng-click="sendDataToModal(item)"
+								>
+									Создать пост
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</section>
 
@@ -104,5 +102,6 @@
 		></script>
 		<script src="assets/js/modal.js"></script>
 		<script src="assets/js/script.js"></script>
+		<script src="assets/js/controllers/BodyController.js"></script>
 	</body>
 </html>
