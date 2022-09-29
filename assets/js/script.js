@@ -9,7 +9,7 @@ let request_params = {
 	order_by: "publication_time",
 };
 
-const parserModule = angular.module("parser", []);
+var parserModule = angular.module("parser", []);
 
 parserModule.controller("BodyController", function ($scope, $http) {
 	$scope.searchVacancies = function (string) {
@@ -36,5 +36,13 @@ parserModule.controller("BodyController", function ($scope, $http) {
 				return true;
 			}
 		}
+	};
+
+	$scope.sendDataToModal = function (item) {
+		$scope.post = {
+			id: item.id,
+			title: item.name,
+			url: item.alternate_url,
+		};
 	};
 });
